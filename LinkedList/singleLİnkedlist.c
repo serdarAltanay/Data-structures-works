@@ -3,7 +3,7 @@
 
 typedef struct NODE {
     int data;
-    struct NODE *next;
+    struct NODE *next;//next pointer
 } NODE;
 
 NODE *start = NULL;
@@ -75,6 +75,7 @@ int main() {
 
 // Create a linked list
 NODE *create_ll(NODE *start) {
+
     NODE *newNode, *ptr;
     int num;
     printf("\nEnter -1 to end");
@@ -87,9 +88,12 @@ NODE *create_ll(NODE *start) {
         newNode->data = num;
 
         if (start == NULL) {
+        
             newNode->next = NULL;
             start = newNode;
+            
         } else {
+        
             ptr = start;
             while(ptr->next != NULL) {
                 //finding end of the list
